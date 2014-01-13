@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.ShapeFill"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.geom.RoundedRectangle"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.geom.Circle"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.geom.Polygon"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.Graphics"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.Color"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.geom.Shape"/>
+<fullyQualifiedTypeName name="objects.Bullet"/>
+<fullyQualifiedTypeName name="objects.Asteroid"/>
+<fullyQualifiedTypeName name="objects.Obj"/>
+<fullyQualifiedTypeName name="game.CollisionChecker"/>
+<fullyQualifiedTypeName name="game.List"/>
+</qualifiedTypeNameHistroy>

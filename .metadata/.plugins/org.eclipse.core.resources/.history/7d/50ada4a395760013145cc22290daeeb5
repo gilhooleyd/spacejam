@@ -1,0 +1,56 @@
+package game;
+
+import objects.Asteroid;
+import objects.Bullet;
+import objects.Obj;
+
+public class CollisionChecker 
+{
+	public static void checkAll(List<List<Obj>> objList)
+	{
+		// VERY BAD CODE. LISTS NEED TO BE IN CORRECT ORDER
+		List<Obj> astList = objList.next.next.data;
+		List<Obj> bulletList = objList.next.data;
+		List<Obj> shipList = objList.next.next.next.data;
+		List<Obj> aPointer = astList.next;
+
+		while (aPointer != null)
+		{
+			// Asteroid to bullet collision
+			List<Obj> bPointer = bulletList.next;
+			while (bPointer != null)
+			{
+				if (aPointer.data.shape() != null && bPointer.data.shape() != null)
+				{
+
+					if (aPointer.data.shape().intersects(bPointer.data.shape()))
+					{
+						System.out.println("HIT!");
+						aPointer.remove();
+						bPointer.remove();
+						break;
+					}
+				}
+				bPointer = bPointer.next;
+			}
+			// Asteroid to ship collision
+			List<Obj> sPointer = shipList.next;
+			while(sPointer != null)
+			{
+				if (sPointer.data.shape() != null && aPointer.data.shape() != null)
+				{
+
+					if (sPointer.data.shape().intersects(aPointer.data.shape()))
+					{
+						float[] speed = sPointer.data.speed();
+						break;
+					}
+				}
+				sPointer = sPointer.next;
+			}
+			aPointer = aPointer.next;
+		}
+		
+	}
+}
+
