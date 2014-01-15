@@ -73,6 +73,8 @@ public class Ship extends Obj
 		stop = truth;
 	}
 
+	// is called once a frame and updates the ship
+	// with its new location
 	public void update(int delta)
 	{
 		float d = .01f*delta;
@@ -81,7 +83,7 @@ public class Ship extends Obj
 		if (turnLeft)
 			rotation -= rotateSpd*.01f*delta;
 
-		if (accelerate)
+		if (!checkBorders() && accelerate )
 		{
 			acceleration[0] = (float) Helper.cos(rotation)*speed;
 			acceleration[1] = (float) Helper.sin(rotation)*speed;
@@ -89,7 +91,7 @@ public class Ship extends Obj
 			velocity[0] += acceleration[0]*delta*.01f;
 			velocity[1] += acceleration[1]*delta*.01f;
 		}
-
+		
 		for(int i = 0; i < 2; i++)
 		{           
 			location[i] += velocity[i]*delta*.01f;
@@ -100,6 +102,41 @@ public class Ship extends Obj
 		}
 	}
 
+	private boolean checkBorders()
+	{
+		boolean check = false;
+		int width = gameInst.container.getWidth();
+		int height = gameInst.container.getHeight();
+		
+		if (location[0] >= width)
+		{
+			check = true;
+			if (velocity[0] > 0)
+				velocity[0] *= -.5f;
+		}
+		if (location[0] <= 0)
+		{
+			check = true;
+			if (velocity[0] < 0)
+				velocity[0] *= -.5f;
+		}
+		
+		if (location[1] >= height)
+		{
+			check = true;
+			if (velocity[1] > 0)
+				velocity[1] *= -.5f;
+		}
+		if (location[1] <= 0)
+		{
+			check = true;
+			if (velocity[1] < 0)
+				velocity[1] *= -.5f;
+		}
+		return check;
+	}
+	// creates a bullet and adds it to the game's bulletlist\
+	// (future work: recoil?)
 	public void fire()
 	{
 
@@ -118,6 +155,8 @@ public class Ship extends Obj
 		pointer.next = wrapper;
 	}
 
+	// changes acceleration to false or true
+	// (needed because of the way keypresses work)
 	public void accelerate(boolean acc)
 	{
 		accelerate = acc;
@@ -128,10 +167,10 @@ public class Ship extends Obj
 		collided = true;
 		if (hitter instanceof Asteroid)
 		{
-			CollisionChecker.backStep(hitter, delta);
-			CollisionChecker.backStep(this, delta);
+			// forces this object to move back a step
+			CollisionChecker.backStep(this, 2*delta);
 			
-			
+			// speed of the object you are colliding into
 			float[] hSpeed = hitter.setSpeed(null);
 			hSpeed[0] += velocity[0] / 2;
 			hSpeed[1] += velocity [0] / 2;

@@ -94,12 +94,14 @@ public class Asteroid extends Obj
 			gameInst.remove();
 		else if (hitter instanceof Asteroid)
 		{
-			float[] hSpeed = hitter.setSpeed(null);
-			hSpeed[0] *= -1;
-			hSpeed[1] *= -1;
-			
+			CollisionChecker.backStep(this, 2*delta);
+
 			velocity[0] *= -1;
 			velocity[1] *= -1;
+		}
+		else if (hitter instanceof Ship)
+		{
+			CollisionChecker.backStep(this, delta);
 		}
 	}
 }

@@ -2,9 +2,12 @@ package game;
 
 public class List<Thing> 
 {
+	// the meat of the list, what it is holding
 	public Thing data;
+	// the next and previous items in the list
 	public List<Thing> previous, next;
 	
+	// empty initializer
 	public List()
 	{
 	}
@@ -15,6 +18,7 @@ public class List<Thing>
 		this.previous = previous;
 	}
 	
+	// remove this node from the whole list
 	public void remove()
 	{
 		previous.next = next;

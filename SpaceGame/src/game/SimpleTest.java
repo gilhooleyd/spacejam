@@ -20,16 +20,18 @@ public class SimpleTest extends BasicGame
 	public List<Obj> bulletList;
 	public List<Obj> astList;
 	public List<List<Obj>> gameList;
-	
+	public GameContainer container;
 	public SimpleTest() 
 	{
 		super("SpaceGame");
 		
 	}
 
+	// initializes every variable needed in SpaceJam
 	@Override
 	public void init(GameContainer container) throws SlickException 
 	{
+		this.container = container;
 		container.setTargetFrameRate(60);
 		int size = 5;
 		int speed = 3;
@@ -66,6 +68,8 @@ public class SimpleTest extends BasicGame
 		gameList.add(shipList);
 	}
 
+	// updates every object (called once 
+	// per frame before draw)
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException 
 	{
@@ -85,6 +89,7 @@ public class SimpleTest extends BasicGame
 		
 	}
 	
+	// checks for keyPresses
 	@Override
 	public void keyPressed(int key, char c)
 	{
@@ -103,6 +108,7 @@ public class SimpleTest extends BasicGame
 			ship.stop(true);
 	}
 	
+	// checks for keyReleases
 	@Override
 	public void keyReleased(int key, char c)
 	{
@@ -116,6 +122,7 @@ public class SimpleTest extends BasicGame
 			ship.stop(false);
 	}
 	
+	// draws each of the shapes (called after update)
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException 
 	{
@@ -137,7 +144,8 @@ public class SimpleTest extends BasicGame
 		}
 		
 	}
-
+	
+	// starts the game (Do not touch this)
 	public static void main(String[] args) 
 	{
 		try 
