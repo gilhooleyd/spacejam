@@ -16,4 +16,5 @@
 <fullyQualifiedTypeName name="objects.Obj"/>
 <fullyQualifiedTypeName name="game.CollisionChecker"/>
 <fullyQualifiedTypeName name="game.List"/>
+<fullyQualifiedTypeName name="game.SimpleTest"/>
 </qualifiedTypeNameHistroy>

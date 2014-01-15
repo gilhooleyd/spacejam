@@ -26,7 +26,7 @@ public class Bullet extends Obj
 		this.range = range;
 		speed = 30f;
 
-		gameInst = inst;
+		objInst = inst;
 	}
 
 	private float[] makePoints(float[] loc, float rotation)
@@ -59,7 +59,7 @@ public class Bullet extends Obj
 		//  removes this bullet from the list if it has gone too far
 		if (range <= 0)
 		{
-			gameInst.remove();
+			objInst.remove();
 		}
 
 		float speed = this.speed * delta * .01f;
@@ -101,7 +101,7 @@ public class Bullet extends Obj
 		if (hitter instanceof Asteroid)
 		{
 			collided = true;
-			gameInst.remove();
+			objInst.remove();
 		}
 	}
 

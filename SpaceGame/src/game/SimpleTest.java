@@ -45,7 +45,7 @@ public class SimpleTest extends BasicGame
 		bulletList = new List<Obj>();
 		
 		astList = new List<Obj>();
-		for (int i = 0; i < 30; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			float[] loc = new float[2];
 			loc[0] = (float) (Math.random()* container.getWidth());
@@ -57,7 +57,7 @@ public class SimpleTest extends BasicGame
 				pointer = pointer.next;
 			}
 			List<Obj> wrapper = new List<Obj>();
-			Asteroid ast = new Asteroid(loc, (float) (Math.random() * 10 + 4), wrapper);
+			Asteroid ast = new Asteroid(loc, (float) (Math.random() * 10 + 4), wrapper, this);
 			wrapper.data = ast; wrapper.previous = pointer;
 			pointer.next = wrapper;
 		}

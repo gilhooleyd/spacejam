@@ -1,6 +1,7 @@
 package objects;
 
 import game.List;
+import game.SimpleTest;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.Shape;
@@ -13,7 +14,8 @@ public abstract class Obj
 	protected boolean collided;
 	// the specific instance of the object in the game
 	// should only be used to remove the object from the game
-	protected List<Obj> gameInst;
+	protected List<Obj> objInst;
+	protected SimpleTest gameInst;
 	
 	// draws the object onto the main graphics g
 	abstract public void draw(Graphics g);
