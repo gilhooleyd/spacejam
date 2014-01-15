@@ -17,6 +17,7 @@ public class Bullet extends Obj
 	
 	public Bullet(float[] location, float rotation, float range, List<Obj> inst)
 	{
+		System.out.println("Bullet MAde");
 		width = 2f;
 		hieght = 10f;
 		
@@ -82,6 +83,7 @@ public class Bullet extends Obj
 	
 	public void draw(Graphics g)
 	{
+		System.out.println("Look its a bullet!");
 		g.setColor(Color.yellow);
 		g.fill(shape);
 //		g.drawLine(points[0], points[1], points[2], points[3]);

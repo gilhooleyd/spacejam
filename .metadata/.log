@@ -175,3 +175,37 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2014-01-15 00:16:25.585 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 4 4 2014-01-15 00:32:48.419
+!MESSAGE Exception occurred while saving project preferences: /SpaceGame/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/SpaceGame/.settings/org.eclipse.jdt.core.prefs'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.write(FileSystemResourceManager.java:1076)
+	at org.eclipse.core.internal.resources.File.internalSetContents(File.java:321)
+	at org.eclipse.core.internal.resources.File.setContents(File.java:360)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:559)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:590)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:350)
+	at org.eclipse.jdt.internal.core.JavaProject.setOptions(JavaProject.java:2994)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathSupport.setEEComplianceOptions(BuildPathSupport.java:395)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.flush(BuildPathsBlock.java:893)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.configureJavaProject(BuildPathsBlock.java:736)
+	at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.configureJavaProject(BuildPathsBlock.java:732)
+	at org.eclipse.jdt.internal.ui.preferences.BuildPathsPropertyPage$1.run(BuildPathsPropertyPage.java:219)
+	at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:39)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5204)
+	at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:106)
+	at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter$1.run(WorkbenchRunnableAdapter.java:122)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-01-15 00:32:48.420
+!MESSAGE Resource is out of sync with the file system: '/SpaceGame/.settings/org.eclipse.jdt.core.prefs'.
